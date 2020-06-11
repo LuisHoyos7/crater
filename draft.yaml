@@ -1,5 +1,28 @@
 models:
-  # ...
+  # locations
+  Location:
+    country_id  : id foreign 
+    state_id    : id foreign
+    city_id     : id foreign
+    address     : string:400
+    description : string:800
+    relationships:
+      hasOne: Company
+
+  #companies
+  Company:
+    nit           : string unique
+    name          : string:400
+    business_name : string:400
+    legal_representative : string:255
+    comercial_activity : string:255
+    phone_number : integer 
+    address      : string:400
+    logo         : string
+    location_id  : id foreign 
+
+seeders: Location, Company
+
 
 controllers:
   # ...
